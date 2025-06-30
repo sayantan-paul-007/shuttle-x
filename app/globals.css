@@ -1,26 +1,85 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+--background: 0.1413 0.0507 268.0235;
+    --foreground: 0.8690 0.0198 252.8943;
+    --card: 0.2077 0.0398 265.7549;
+    --card-foreground: 0.8690 0.0198 252.8943;
+    --popover: 0.2795 0.0368 260.0310;
+    --popover-foreground: 0.8690 0.0198 252.8943;
+    --primary: 0.8091 0.0956 251.8128;
+    --primary-foreground: 0.1644 0.0276 276.2642;
+    --secondary: 0.4455 0.0374 257.2808;
+    --secondary-foreground: 0.9842 0.0034 247.8575;
+    --muted: 0.3717 0.0392 257.2870;
+    --muted-foreground: 0.7107 0.0351 256.7878;
+    --accent: 0.6874 0.0543 263.0598;
+    --accent-foreground: 0.1644 0.0276 276.2642;
+    --destructive: 0.5771 0.2152 27.3250;
+    --destructive-foreground: 0.9842 0.0034 247.8575;
+    --border: 0.3685 0.0442 272.0294;
+    --input: 0.2795 0.0368 260.0310;
+    --ring: 0.7137 0.1434 254.6240;
+    --chart-1: 0.7090 0.1592 293.5412;
+    --chart-2: 0.8228 0.1095 346.0184;
+    --chart-3: 0.8452 0.1299 164.9782;
+    --chart-4: 0.8369 0.1644 84.4286;
+    --chart-5: 0.6368 0.2078 25.3313;
+    --radius: 8px;
+    --sidebar: 0.1413 0.0507 268.0235;
+    --sidebar-foreground: 0.8690 0.0198 252.8943;
+    --sidebar-primary: 0.8091 0.0956 251.8128;
+    --sidebar-primary-foreground: 0.1644 0.0276 276.2642;
+    --sidebar-accent: 0.6874 0.0543 263.0598;
+    --sidebar-accent-foreground: 0.1644 0.0276 276.2642;
+    --sidebar-border: 0.3685 0.0442 272.0294;
+    --sidebar-ring: 0.7137 0.1434 254.6240;
+    --font-sans: Lato;
+    --font-serif: Merriweather;
+    --font-mono: Monaco;
+    --shadow-color: #000000;
+    --shadow-opacity: 0.2;
+    --shadow-blur: 10px;
+    --shadow-spread: 2px;
+    --shadow-offset-x: 2px;
+    --shadow-offset-y: 2px;
+    --letter-spacing: 0.5px;
+    --spacing: 0.25rem;
+    --shadow-2xs: 2px 2px 10px 2px hsl(0 0% 0% / 0.10);
+    --shadow-xs: 2px 2px 10px 2px hsl(0 0% 0% / 0.10);
+    --shadow-sm: 2px 2px 10px 2px hsl(0 0% 0% / 0.20), 2px 1px 2px 1px hsl(0 0% 0% / 0.20);
+    --shadow: 2px 2px 10px 2px hsl(0 0% 0% / 0.20), 2px 1px 2px 1px hsl(0 0% 0% / 0.20);
+    --shadow-md: 2px 2px 10px 2px hsl(0 0% 0% / 0.20), 2px 2px 4px 1px hsl(0 0% 0% / 0.20);
+    --shadow-lg: 2px 2px 10px 2px hsl(0 0% 0% / 0.20), 2px 4px 6px 1px hsl(0 0% 0% / 0.20);
+    --shadow-xl: 2px 2px 10px 2px hsl(0 0% 0% / 0.20), 2px 8px 10px 1px hsl(0 0% 0% / 0.20);
+    --shadow-2xl: 2px 2px 10px 2px hsl(0 0% 0% / 0.50);
+    --tracking-normal: 0.5px;
+  }
+  .theme {
+    --font-sans: Lato;
+    --font-mono: Monaco;
+    --font-serif: Merriweather;
+    --radius: 8px;
+    --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+    --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+    --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+    --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+    --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  }
+ 
+  body {
+    letter-spacing: var(--tracking-normal);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
 }
